@@ -1,0 +1,46 @@
+BISTRO SABOR DA VILA — PROJETO DIDÁTICO PHP + MYSQL
+
+FUNCIONALIDADES
+- Registro de comandas com número sequencial automático (baseado no ID).
+- Data/hora de abertura e de entrega.
+- Seleção de produtos, quantidades e preços predefinidos.
+- Total calculado por comanda.
+- Observação da cozinha, editável enquanto a comanda está aberta.
+- Marcação como entregue.
+- Cadastro, edição, ativação e desativação de produtos.
+- Dez produtos de exemplo incluídos no SQL.
+- PDO, consultas preparadas e escape de saída HTML.
+
+TESTE LOCAL (XAMPP)
+1. Copie a pasta bistro_devops para C:\xampp\htdocs\
+2. Inicie Apache e MySQL.
+3. Importe database.sql pelo phpMyAdmin.
+4. Confira config/database.php (padrão XAMPP: localhost, bistro_devops, root, senha vazia).
+5. Abra http://localhost/bistro_devops/
+6. Para gerenciar o cardápio: http://localhost/bistro_devops/produtos.php
+
+PUBLICAÇÃO NO INFINITYFREE
+1. Crie o banco MySQL pelo painel da hospedagem.
+2. Use host, nome do banco, usuário e senha exibidos no painel em config/database.php.
+   O host remoto normalmente não é localhost.
+3. Selecione o banco no phpMyAdmin e importe database.sql. Se CREATE DATABASE/USE
+   não for permitido, remova essas instruções e importe o restante no banco selecionado.
+4. Envie o conteúdo da pasta bistro_devops para a pasta pública indicada no painel
+   (frequentemente htdocs). O index.php deve ficar na raiz pública.
+5. Teste cadastro de comanda, alteração de observação, entrega e cadastro de produtos.
+
+ESTRUTURA
+index.php              Painel de comandas
+produtos.php           Cadastro e edição do cardápio
+config/database.php    Conexão PDO
+database.sql           Tabelas e produtos de exemplo
+assets/style.css       Estilos responsivos
+
+NOTAS
+- O número da comanda acompanha o ID sequencial do banco. Podem existir saltos se uma
+  operação falhar; isso é normal em bancos SQL.
+- O preço do item é copiado para a comanda e não muda se o preço do produto for alterado.
+- Produtos inativos não aparecem em novas comandas, mas continuam no histórico.
+- Sem login, conforme solicitado: use apenas como demonstração didática. Não use dados
+  reais nem exponha como sistema de produção sem implementar autenticação e autorização.
+- Não publique credenciais reais em repositório público.
