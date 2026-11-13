@@ -1,7 +1,7 @@
 -- Bistrô Sabor da Vila: sistema didático de comandas.
 -- No InfinityFree, crie o banco pelo painel e selecione-o no phpMyAdmin.
 -- Se necessário, remova CREATE DATABASE e USE antes de importar.
-CREATE DATABASE IF NOT EXISTS bistro_devops CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE DATABASE IF NOT EXISTS bistro CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE bistro_devops;
 
 CREATE TABLE IF NOT EXISTS produtos (
